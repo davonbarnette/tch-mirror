@@ -1,0 +1,12 @@
+@import '../../../global/scss/config';
+
+.static-field-container {
+  position: relative;
+
+  .static-field-label {
+    @include font(12px, 700, 0.025em, $h4-header);
+    text-transform: uppercase;
+    margin-bottom:3px;
+    line-height: 1em;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../../global/scss/config';
+
+.field-container {
+  position: relative;
+
+  .field-label {
+    @include font(14px, 700, 0.025em, $h4-header);
+    margin-bottom:6px;
+    line-height: 1em;
+    .required {
+      color:red;
+    }
+  }
+
+  .field-error {
+    @include font(12px, 500, 0, $error-color);
+    transform: translate(0, -50px);
+    margin-top: 3px;
+    transition: all 0.2s ease-in;
+  }
+}

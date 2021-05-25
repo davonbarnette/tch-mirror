@@ -1,0 +1,22 @@
+@import '../../../global/scss/config';
+
+.responsive-video {
+  @include flex(row, flex-start, flex-start);
+  width: 100%;
+  .video-container {
+    @include flex(row, center, center);
+    text-align: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden; //16:9 will be a bit cropped, this is for mobile videos
+
+    .image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      border: none;
+    }
+  }
+}

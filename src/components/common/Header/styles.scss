@@ -1,0 +1,66 @@
+@import '../../../global/scss/config';
+
+.header-component {
+  @include flex(column, flex-start, flex-start);
+  @include border(none solid none);
+  background: white;
+  transition: all 0.3s ease-in;
+
+  &.full{
+    min-width:250px;
+  }
+
+  .company {
+    @include pad-box(18px 24px);
+    @include font(24px, 300, 0em, $dark-gray);
+    line-height:1em;
+    margin-bottom:36px;
+    .second{
+      font-weight:600;
+    }
+  }
+
+  .navigation {
+    @include flex(column, flex-start, flex-start);
+    @include font(12px, 300, 0.2em, $highlighted-text);
+    width:100%;
+
+  }
+  .bottom {
+    @include flex(column, center, center);
+    width:100%;
+    margin-top: auto;
+  }
+}
+
+.navigate-to {
+  @include flex(row, flex-start, center);
+  @include pad-box(18px 24px);
+  width:100%;
+  transition: all 0.3s;
+  cursor:pointer;
+
+  &:hover{
+    background:$secondary-background-color;
+  }
+
+  &.selected {
+
+    .text{
+      //color:$light-blue;
+      color:$dark-gray
+    }
+
+    &:hover {
+      background:none;
+      cursor:default;
+    }
+  }
+
+  .text {
+    @include font(14px, 500, 0.05em, #cccccc);
+    margin-left:12px;
+    line-height:1em;
+    transition: all 0.3s;
+  }
+}

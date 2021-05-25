@@ -1,0 +1,60 @@
+@import "../../../global/scss/config";
+
+.ad-table-row {
+  background: white;
+
+  &:last-of-type > td {
+    border: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    & > td {
+      background: $secondary-background-color !important;
+    }
+  }
+}
+
+.no-data-description {
+  @include font(18px, 500, 0, $dark-gray);
+  margin-bottom:12px;
+}
+
+.search-column-container {
+
+  @include pad-box(18px);
+
+  .input {
+    margin-bottom:12px;
+  }
+
+  .buttons-container {
+    @include flex(row, flex-start, center);
+    width:100%;
+    .search-action-button {
+      width:100%;
+        &.white {
+          @include border(solid);
+          margin-left: 6px;
+          background-color: white;
+          color:$dark-gray;
+        }
+    }
+  }
+}
+
+.ant-table {
+  @include border(solid);
+  border-radius: 5px;
+  overflow: hidden;
+
+  & .ant-table-placeholder {
+    @include border(none);
+  }
+}
+
+.ant-table-wrapper {
+
+  @include scale-max-content-width;
+
+}

@@ -1,0 +1,97 @@
+@import '../../../global/scss/config';
+
+.detection-container-hands {
+  @include flex(column, flex-start, flex-start);
+  @include pad-box(48px 24px);
+
+  height:100%;
+
+  .details {
+    @include font(14px, 500, 0, $medium-gray);
+    margin-bottom:12px;
+
+    .num-hands {
+
+    }
+    .instructions {
+      margin-right:auto;
+    }
+  }
+  .video-container {
+    @include flex(column, center, center);
+    background:black;
+    position:relative;
+    width: 100%;
+
+    .video-player {
+      @include flex(row, flex-start, center);
+      max-width:1400px;
+      outline: none;
+      height: 100%;
+
+      &:hover {
+        .icon{
+          opacity:1;
+        }
+      }
+
+      .icon {
+        @include position-centered(absolute);
+        opacity:0;
+        z-index: 200;
+        transition: all 0.3s;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .custom-video-container {
+        background: black;
+        box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+      }
+      .current-frame {
+        @include scale-max-content-width;
+      }
+
+      .posenet-video {
+        @include box-shadow-1;
+        background: black;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .loading-image {
+      display: none;
+    }
+
+    .floating-image {
+      position:absolute;
+      z-index: 300;
+      transform: translate(-50%, -50%);
+      max-width:200px;
+      transition:all 0.1s;
+      opacity:0;
+    }
+
+    .point {
+      z-index:300;
+      display: flex;
+      position: absolute;
+      box-sizing: border-box;
+      border: 1px solid black;
+      background: rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+      border-radius: 50%;
+      width: 9px;
+      height: 9px;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+
+
+}

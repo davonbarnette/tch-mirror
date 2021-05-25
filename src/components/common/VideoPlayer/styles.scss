@@ -1,0 +1,146 @@
+@import '../../../global/scss/config';
+
+.video-player-container {
+  @include flex(column, center, center);
+  @include pad-box(24px);
+  width: 100%;
+
+
+  .video-player {
+
+    @include flex(row, flex-start, center);
+    @include scale-max-content-width;
+    outline: none;
+    height: 100%;
+
+    &:hover .timeline-container {
+      opacity: 1;
+    }
+
+    .current-frame {
+      @include scale-max-content-width;
+    }
+
+    .custom-video-container {
+      background: black;
+      border-radius: 5px;
+      padding-bottom: 56.25%;
+      padding-top: 25px;
+      box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+    }
+
+    .timeline-container {
+      @include flex(column, flex-end, center);
+      @include pad-box(12px);
+      @include max-size;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.3s;
+      bottom: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.5);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 65px);
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .controls {
+        @include flex(row, space-between, center);
+        width: 100%;
+
+        .left {
+          @include flex(row, flex-start, center);
+        }
+
+        .right {
+          @include flex(row, flex-start, center);
+          .time {
+            @include font(12px, 500, 0.05em, white);
+            display: flex;
+            align-items: flex-end;
+            margin-left: 12px;
+          }
+        }
+
+        .controller-button {
+          margin-right: 12px;
+          display: flex;
+
+          &:last-of-type{
+            margin-right:0;
+          }
+
+        }
+      }
+
+      .progress-bar {
+        @include max-size;
+        margin-bottom: 9px;
+        position: relative;
+        height: 4px;
+        background: rgba(210, 210, 210, 0.6);
+        transition: all 0.2s;
+
+        &-current {
+          @include position-top-left(absolute);
+          height: 100%;
+          background: $primary-button-bg-color;
+        }
+
+        &-hovered {
+          height: 100%;
+          background: white;
+          position: relative;
+
+        }
+
+        &-marker {
+          @include position-top-left(absolute);
+          @include circle(9px);
+          transform: translate(-50%, -25%);
+          background: $primary-button-bg-color;
+        }
+      }
+    }
+  }
+}
+
+.preview {
+
+  @include flex(column, flex-start, center);
+  @include font(14px, 300, 0.05em, white);
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  transform: translate(50%, 0);
+  display: none;
+  color: white;
+  background: gray;
+  border-radius: 2px;
+
+  &-timestamp {
+    @include flex(row, center, center);
+    @include pad-box(6px);
+    @include font(12px, 500, 0, white);
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    left: 50%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .current-frame {
+    min-width: 150px;
+  }
+
+  .custom-video-container {
+    background: black;
+    border-radius: 5px;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  }
+
+}

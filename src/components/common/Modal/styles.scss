@@ -1,0 +1,49 @@
+@import "../../../global/scss/config";
+
+.modal-wrapper{
+
+  position:absolute;
+  @include max-size;
+
+  .modal-content{
+
+    @include box-shadow-2;
+    @include flex-center(column);
+    @include position-centered(fixed);
+    @include animation(scale-from-zero-centered 0.3s ease-in-out forwards);
+    max-width:90vw;
+    max-height:90vh;
+    opacity:0;
+
+    z-index: $modal-z-index;
+    overflow:hidden;
+    background:$primary-background-color;
+    border-radius:5px;
+
+    .modal-header-container{
+      @include flex(row, space-between, center);
+      @include font(24px, 700, 0em, $dark-gray);
+      @include pad-box(18px 24px);
+      @include border(none none solid none);
+      background:white;
+
+      width:100%;
+
+      .title{
+        margin-right:auto;
+      }
+      .icon{
+        &:hover{
+          cursor:pointer;
+        }
+      }
+    }
+  }
+
+  .backdrop{
+    @include position-centered(fixed);
+    @include max-size;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: $modal-backdrop-z-index;
+  }
+}

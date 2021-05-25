@@ -1,0 +1,47 @@
+@import '../../../global/scss/config';
+
+.scrollable-app {
+  height:100vh !important;
+}
+
+.app {
+  @include flex(column, flex-start, initial);
+  height:100%;
+  background-color: $secondary-background-color;
+  position:relative;
+
+  .header {
+    @include flex(row, space-between, center);
+    @include pad-box(12px 24px);
+    @include border(none none solid none);
+    @include font(14px, 600, 0, $medium-gray);
+    z-index: 9997;
+    background: #e61b29;
+    width: 100%;
+    top: 0;
+    position: sticky;
+
+    .logo {
+      max-height: 80px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.loading-app {
+  @include flex-center(column);
+  @include size(100vw, 100vh);
+
+  .text {
+    @include font(24px, 500, 0, $dark-gray)
+  }
+
+  .app-indeterminate-loader {
+    max-width: 300px;
+  }
+}
+
+

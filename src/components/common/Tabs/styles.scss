@@ -1,0 +1,31 @@
+@import '../../../global/scss/config';
+
+.tabs {
+  width: 100%;
+  background:$primary-background-color;
+
+  .tab {
+    @include flex(row, flex-start, center);
+    @include border(solid solid none solid);
+    margin-right:36px;
+    border-color:transparent;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.selected {
+      & > .text {
+        color: #757575;
+        font-weight: 700;
+      }
+    }
+
+    .text {
+      @include font(14px, 500, 0.025em, #d0d0d0);
+      margin-left: 12px;
+      transition: all 0.3s;
+    }
+  }
+}

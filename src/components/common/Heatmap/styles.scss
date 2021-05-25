@@ -1,0 +1,52 @@
+@import '../../../global/scss/config';
+
+.heatmap-component {
+  @include flex(column, flex-start, flex-start);
+  width: 100%;
+
+  .heat-row-container {
+    @include flex(row, flex-start, center);
+    margin-bottom:3px;
+    width:100%;
+
+    &:last-of-type{
+      margin-bottom:0;
+    }
+    .heat-row-label {
+      flex: 0 1 5%;
+      line-height: 1em;
+      margin-right:6px;
+      @include font(14px, 700, 0, #5f5f5f);
+    }
+
+    .heat-row-squares {
+      @include flex(row, flex-start, flex-start);
+
+      .heat-square {
+        margin-right:3px;
+        height: 14px;
+        width: 14px;
+        background: #e6e6e6;
+        transition:all 0.3s;
+
+        &:hover{
+          cursor:pointer;
+          transform:scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.popover-content{
+
+  .content-paragraph {
+    @include font(16px, 500, 0, gray);
+    margin-bottom:12px;
+  }
+
+  //.go-to-event {
+  //  @include pink-button;
+  //}
+}
+

@@ -1,0 +1,127 @@
+@mixin size($width, $height){
+  height:$height;
+  width:$width;
+}
+
+@mixin background-image-center{
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin equal-sizing($size){
+  @include size($size, $size);
+}
+
+@mixin max-size{
+  @include equal-sizing(100%);
+}
+
+@mixin circle($size){
+  min-height: $size;
+  min-width: $size;
+  border-radius:50%;
+}
+
+@mixin flex($direction, $justify, $align){
+  display:flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-center($direction){
+  @include flex($direction, center, center);
+}
+
+@mixin font($size, $weight, $spacing, $color){
+  font-size:$size;
+  font-weight:$weight;
+  letter-spacing: $spacing;
+  color: $color;
+}
+
+@mixin box-shadow($values){
+  -webkit-box-shadow: $values;
+  -moz-box-shadow: $values;
+  box-shadow: $values;
+}
+
+@mixin pad-box($padding) {
+  padding: $padding;
+  box-sizing: border-box;
+}
+
+@mixin absolute-center($top, $left){
+  position:absolute;
+  transform:translate(-50%, -50%);
+  top:$top;
+  left:$left;
+}
+
+@mixin position-top-left($position){
+  position:$position;
+  top:0;
+  left:0;
+}
+
+@mixin position-centered($position:absolute){
+  position:$position;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+@mixin flex-basis-grid($per-row, $padding-top){
+  $percentage: 100 / $per-row * 1%;
+  flex-basis: calc(#{$percentage} - 18px);
+  margin: 9px 9px 9px 9px;
+  flex-wrap:wrap;
+  position: relative;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:nth-of-type(#{$per-row}n+1) {
+    margin-left: 0;
+  }
+  &:nth-of-type(#{$per-row}n) {
+    margin-right: 0;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: $padding-top;
+  }
+}
+
+@mixin bare-input(){
+  border:none;
+  outline:none;
+}
+
+@mixin mq-screen-btwn($min-width, $max-width) {
+  @media only screen and (min-width: $min-width) and (max-width: $max-width){
+    @content
+  }
+}
+@mixin mq-screen-lt($max-width) {
+  @media only screen and (max-width: $max-width){
+    @content
+  }
+}
+@mixin mq-screen-gt($min-width) {
+  @media only screen and (min-width: $min-width){
+    @content
+  }
+}
+
+
+
+
+
+
+
+
+

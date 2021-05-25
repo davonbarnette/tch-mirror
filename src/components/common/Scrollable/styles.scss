@@ -1,0 +1,18 @@
+@import '../../../global/scss/config';
+
+.scrollable-container{
+
+  @include max-size;
+  flex:1;
+
+  &.scroll-x {
+    overflow-x: scroll;
+    min-width:0;
+  }
+
+  &.scroll-y {
+    overflow-y: scroll;
+    min-height:0;
+  }
+
+}

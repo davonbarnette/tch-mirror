@@ -1,0 +1,79 @@
+@import '../../../global/scss/config';
+
+$horizontal-table-padding: 48px;
+
+.table-flex {
+
+  @include flex(column, flex-start, flex-start);
+  @include max-size;
+  transition: all 0.3s;
+
+  .header-row {
+    @include flex(row, flex-start, center);
+    @include pad-box(18px 48px 18px 36px);
+    width: 100%;
+
+    .header-item {
+      @include font(14px, 600, 0em, gray);
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.main {
+        @include font(24px, 600, 0em, #6a6a6a);
+      }
+    }
+  }
+
+  .data-rows-outer {
+    @include flex(column, flex-start, center);
+    @include max-size;
+
+    .data-rows-container {
+      @include flex(column, flex-start, flex-start);
+      min-height:0;
+      width: 100%;
+      .data-row {
+        @include flex(row, flex-start, center);
+        @include pad-box(24px 36px);
+        @include border(solid);
+        border-radius:5px;
+        width: 100%;
+        transition: all 0.2s;
+        margin-bottom:12px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        &.selectable {
+
+          &:hover {
+            @include box-shadow-1;
+            cursor: pointer;
+          }
+        }
+
+        .data-item {
+          @include flex(row, flex-start, center);
+          @include font(14px, 500, 0.025em, #9a9a9a);
+        }
+      }
+    }
+  }
+}
+
+.no-entries-container {
+  @include max-size;
+  @include flex-center(row);
+  @include pad-box(48px);
+  @include border(solid);
+  border-radius:5px;
+  background: white;
+  .text{
+    @include font(24px, 600, 0, #505050);
+    margin-left:12px;
+  }
+
+}

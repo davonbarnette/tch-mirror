@@ -1,0 +1,13 @@
+@import '../../../../global/scss/mixins';
+
+.h2-section {
+  .header {
+    @include font(24px, 700, 0, #505050);
+    line-height: 1em;
+    margin-bottom: 6px;
+  }
+  .subheader {
+    @include font(12px, 500, 0, #afafaf);
+    line-height: 1em;
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "tch-lift",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^1.0.0",
+    "@tensorflow-models/posenet": "^1.0.0",
+    "@tensorflow/tfjs": "^1.0.2",
+    "@types/classnames": "^2.2.6",
+    "@types/history": "^4.7.2",
+    "@types/jest": "23.3.10",
+    "@types/jsoneditor": "^5.19.0",
+    "@types/lodash": "^4.14.120",
+    "@types/node": "10.12.12",
+    "@types/react": "16.7.13",
+    "@types/react-dom": "16.0.11",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/socket.io-client": "^1.4.32",
+    "@types/websocket": "0.0.40",
+    "@types/yup": "^0.26.3",
+    "antd": "^3.13.1",
+    "axios": "^0.18.0",
+    "chart.js": "^2.8.0",
+    "classnames": "^2.2.6",
+    "history": "^4.7.2",
+    "jsoneditor": "^5.26.3",
+    "lodash": "^4.17.11",
+    "mobx": "^5.7.0",
+    "mobx-react": "^5.4.2",
+    "moment": "^2.23.0",
+    "node-sass": "^4.14.1",
+    "react": "^16.6.3",
+    "react-chartkick": "^0.3.0",
+    "react-dom": "^16.6.3",
+    "react-dropzone": "^8.0.1",
+    "react-feather": "^1.1.4",
+    "react-json-view": "^1.19.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.8",
+    "socket.io-client": "^2.2.0",
+    "typescript": "3.2.2",
+    "websocket": "^1.0.28",
+    "yup": "^0.26.6"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build --config craco.prod.config.js",
+    "test": "craco test",
+    "create": "plop",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@craco/craco": "^3.6.0",
+    "compression-webpack-plugin": "^2.0.0",
+    "plop": "^2.2.0"
+  },
+  "proxy": "http://localhost:8000"
+}

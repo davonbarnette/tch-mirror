@@ -1,0 +1,33 @@
+@import '../../../global/scss/config';
+
+.custom-dropzone {
+
+  @include border(dashed dashed dashed dashed);
+  @include pad-box(24px);
+  transition: all 0.2s ease-in;
+  border-radius:3px;
+  outline:none;
+
+  & > input {
+    outline:none;
+  }
+
+  &:hover{
+    cursor:pointer;
+  }
+
+  .dropzone-text{
+    @include font(16px, 700, 0, $primary-border-color);
+  }
+
+}
+
+.drag-accept {
+  border-color: #54ca97;
+  border-style: solid !important;
+}
+
+.drag-reject {
+  border-color: $error-color !important;
+  border-style: solid !important;
+}

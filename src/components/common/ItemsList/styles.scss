@@ -1,0 +1,50 @@
+@import '../../../global/scss/config';
+
+.items-list{
+  @include flex(column, flex-start, flex-start);
+  @include border(none solid none none);
+  height:100%;
+  background: white;
+  flex:1 0 300px;
+  max-width:300px;
+
+  .search-items{
+    @include flex(column, flex-start, flex-start);
+    @include pad-box(3px);
+    @include border(none none solid none);
+    width:100%;
+
+    & .ant-select-selection {
+      border:none;
+      box-shadow:none;
+      outline: none;
+      border-radius:0;
+      width:100%;
+    }
+  }
+
+  .items{
+      @include pad-box(0 0 0 0);
+    }
+  .add-item{
+    @include pad-box(18px);
+    @include border(solid none none none);
+    width:100%;
+  }
+}
+
+.grouping {
+  @include border(solid none none none);
+
+  &:first-of-type {
+    border:none;
+  }
+  .grouping-header {
+    @include font(18px, 600, 0, $dark-gray);
+    @include pad-box(12px);
+    @include border(none none solid none);
+  }
+  .items-in-grouping {
+
+  }
+}

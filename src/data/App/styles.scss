@@ -1,0 +1,12 @@
+@import '../../global/scss/config';
+
+.new-device-notification-message {
+
+  @include flex(row, flex-start, center);
+  @include font(36px, 600, 0, $dark-gray);
+
+  .new-device-avatar {
+    margin-right:12px;
+  }
+
+}

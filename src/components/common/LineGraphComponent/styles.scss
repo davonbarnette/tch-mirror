@@ -1,0 +1,45 @@
+@import '../../../global/scss/config';
+
+.line-graph-component {
+  @include flex(column, flex-start, flex-start);
+  position:relative;
+  width:100%;
+  min-height:0;
+
+  .lg-circle{
+    position:absolute;
+    border-radius:50%;
+
+    width:10px;
+    height:10px;
+
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+
+    border:2px solid mediumpurple;
+    box-sizing: border-box;
+
+  }
+
+  .horizontal-line-increment {
+    @include flex(row, flex-start, center);
+    position: absolute;
+    width:100%;
+    .text {
+      @include font(10px, 500, 0.025em, #ababab);
+      @include pad-box(0 6px);
+    }
+    .line {
+      min-height: 1px;
+      width: 100%;
+      background: $primary-border-color;
+    }
+  }
+  .graph-container{
+    z-index:500;
+    width: 100%;
+    max-height:300px;
+    height: 100%;
+
+  }
+}

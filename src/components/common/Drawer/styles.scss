@@ -1,0 +1,50 @@
+@import "../../../global/scss/config";
+
+.drawer-wrapper{
+
+  position:absolute;
+  @include max-size;
+
+  .drawer-content{
+
+    @include box-shadow-2;
+    @include flex(column, flex-start, flex-start);
+    position:fixed;
+    bottom:0;
+    left:0;
+
+    width:100vw;
+    height:95vh;
+    animation: fadeInFromBottom 0.7s ease-in-out forwards;
+    opacity:0;
+
+    z-index: $modal-z-index;
+    overflow:hidden;
+    background:white;
+    border-radius:5px 5px 0 0;
+
+    .drawer-header-container{
+      @include flex(row, space-between, center);
+      @include font(24px, 700, 0em, white);
+      @include pad-box(18px 24px);
+      background: $light-blue;
+      width:100%;
+
+      .title{
+        margin-right:auto;
+      }
+      .icon{
+        &:hover{
+          cursor:pointer;
+        }
+      }
+    }
+  }
+
+  .backdrop{
+    @include position-centered(fixed);
+    @include max-size;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: $modal-backdrop-z-index;
+  }
+}

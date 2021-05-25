@@ -1,0 +1,13 @@
+@import '../../../global/scss/config';
+
+.avatar {
+
+  position:relative;
+  background-position: center;
+  background-size: cover;
+
+  &-image{
+    position:absolute;
+
+  }
+}
